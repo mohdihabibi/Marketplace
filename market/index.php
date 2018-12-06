@@ -52,6 +52,9 @@
               <a class="nav-link js-scroll-trigger" href="#team">Team</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#analytics">Analytics</a>
+            </li>            
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
           </ul>
@@ -363,6 +366,27 @@
         </div>
       </div>
     </section>
+    <!-- Analytics -->
+    <section id="analytics">
+      <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">Analytics</h2>
+              <h3 class="section-subheading text-muted">Some usage data about you and other users.</h3>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-6">
+              <h4 class="service-heading">About you.</h4>
+              <p class="text-muted">None</p>
+            </div>
+            <div class="col-md-6">
+              <h4 class="service-heading">About other users.</h4>
+              <p class="text-muted">None</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     <!-- Contact -->
     <section id="contact">
