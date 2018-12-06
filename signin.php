@@ -8,7 +8,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
    && !empty($_POST['password']))
 {
     
-    $link = mysqli_connect("localhost", "root", "mysql", "CrossWorld");
+    $link = mysqli_connect("localhost:3306", "softwby8", "Meh2Fere@1", "softwby8_newdb");
 
     // Check connection
     if($link === false){

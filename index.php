@@ -1,16 +1,13 @@
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "mysql";
-$dbname = "CrossWorld";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+$link = mysqli_connect("localhost:3306", "softwby8", "Meh2Fere@1", "softwby8_newdb");
+
+    // Check connection
+    if($link === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
 
 if(isset($_POST['submit']))
 {
@@ -27,7 +24,7 @@ if(isset($_POST['submit']))
 	    $sql = "INSERT INTO web_site_users ( fullname,  email , username , password) 
 	    values('$name', '$email', '$username' , '$password' )";
 
-		if (mysqli_query($conn, $sql)) 
+		if (mysqli_query($link, $sql)) 
 		{
 		    $error_msg=  "New record created successfully";
 		} else 
