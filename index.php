@@ -27,6 +27,7 @@ if(isset($_POST['submit']))
 		if (mysqli_query($link, $sql)) 
 		{
 		    $error_msg=  "New record created successfully";
+            header("location: ./signin.php");
 		} else 
 		{
 		    $error_msg=  "Error: " . $sql . "<br>" . mysqli_error($conn);
