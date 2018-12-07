@@ -22,16 +22,16 @@
 //     $row[1]+= $product->
 
 //     $sql = "INSERT INTO web_site_users ( fullname,  email , username , password) 
-// 	    values('$name', '$email', '$username' , '$password' )";
+//      values('$name', '$email', '$username' , '$password' )";
 
-// 		if (mysqli_query($link, $sql)) 
-// 		{
-// 		    $error_msg=  "New record created successfully";
+//    if (mysqli_query($link, $sql)) 
+//    {
+//        $error_msg=  "New record created successfully";
 //             header("location: ./signin.php");
-// 		} else 
-// 		{
-// 		    $error_msg=  "Error: " . $sql . "<br>" . mysqli_error($conn);
-// 		}
+//    } else 
+//    {
+//        $error_msg=  "Error: " . $sql . "<br>" . mysqli_error($conn);
+//    }
 //   }
 // }  
 
@@ -471,6 +471,7 @@
             <div class="col-md-6">
               <h4 class="service-heading">Top 5 Highest Rated Products</h4>
               <p class="text-muted"></p>
+            
               <?php
                 $url= "http://nasrajan.theeram.net/top5.php";
                 $ch = curl_init();
@@ -493,16 +494,16 @@
                 $data_array = json_decode($data, true);
                 $products = array_merge($data_array, $products);
 
-                // $url= "PLACE HOLDER FOR PRIYANKA URL";
-                // $ch = curl_init();
-                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                // curl_setopt($ch, CURLOPT_URL, $url);
-                // $data = curl_exec($ch);
+                $url= "http://codeweb.online/crunchiestomunchies/top5.php";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                curl_setopt($ch, CURLOPT_URL, $url);
+                $data = curl_exec($ch);
                     
-                // curl_close($ch);
-                // $data_array = json_decode($data, true);
-                // $products = array_merge($data_array, $products);
+                curl_close($ch);
+                $data_array = json_decode($data, true);
+                $products = array_merge($data_array, $products);
 
                 $url= "http://www.darter.online/top5.php";
                 $ch = curl_init();
@@ -527,6 +528,15 @@
                   if ($counter == 5){
                     break;
                   }
+              ?>
+              
+              <a href="<?php  $redirecturl = urldecode($product['product_url']);
+                            echo $redirecturl;?>" >
+               <img style="width:70%; height:15%;" src="<?php  $imgurl = urldecode($product['product_image']);
+                            echo $imgurl;?>" alt=""/>
+              </a>
+             <br/>
+              <?php
                   echo $product['product_name'];
                   echo " : "; 
                   echo $product['rating'];
@@ -595,11 +605,24 @@
                   if ($counter == 5){
                     break;
                   }
+             ?>
+              <!-- Code for Product Images and Redirect Url -->
+                <a href="<?php  $redirecturl = urldecode($product['product_url']);
+                            echo $redirecturl;?>" >
+                <img style="width:75%; height:18%;" src="<?php  $imgurl = urldecode($product['product_image']);
+                            echo $imgurl;?>" alt=""/>
+                </a>
+                <br/>
+  
+              <?php
                   echo $product['product_name'];
                   echo " : "; 
                   echo $product['visits'];
                   echo "<br>";
                   $counter++;
+               ?>
+               <br/>
+              <?php
                 }
               ?>
             </div>
