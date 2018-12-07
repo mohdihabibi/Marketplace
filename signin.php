@@ -8,8 +8,8 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
    && !empty($_POST['password']))
 {
     
-    $link = mysqli_connect("localhost", "root", "mysql", "CrossWorld");
-
+    $link = mysqli_connect("localhost:3306", "softwby8", "Meh2Fere@1", "softwby8_newdb");
+    //$link = mysqli_connect("localhost", "root", "mysql", "CrossWorld");
     // Check connection
     if($link === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -22,7 +22,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
     if(mysqli_num_rows($result) > 0)
     {
         $row = mysqli_fetch_row($result);
-        $password =$row[5];
+        $password =$row[4];
         $msg = "$password";
         if($_POST["password"] == $password)
           header("location: ./market/index.php");

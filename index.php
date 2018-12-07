@@ -2,8 +2,8 @@
 <?php
 
 // Create connection
-    $link = mysqli_connect("localhost", "root", "mysql", "CrossWorld");
-
+    $link = mysqli_connect("localhost:3306", "softwby8", "Meh2Fere@1", "softwby8_newdb");
+    //$link = mysqli_connect("localhost", "root", "mysql", "CrossWorld");
     // Check connection
     if($link === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
@@ -34,7 +34,6 @@ if(isset($_POST['submit']))
 		}
 	}
 }
-
 
 ?>
 
