@@ -8,7 +8,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
    && !empty($_POST['password']))
 {
     
-    $link = mysqli_connect("localhost:3306", "softwby8", "Meh2Fere@1", "softwby8_newdb");
+    $link = mysqli_connect("localhost", "root", "mysql", "CrossWorld");
 
     // Check connection
     if($link === false){
@@ -22,7 +22,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
     if(mysqli_num_rows($result) > 0)
     {
         $row = mysqli_fetch_row($result);
-        $password =$row[4];
+        $password =$row[5];
         $msg = "$password";
         if($_POST["password"] == $password)
           header("location: ./market/index.php");
@@ -72,9 +72,9 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
                             </a>
                         </div>
                     </form>
-                    <?php if(isset($error_msg))echo $error_msg;?>
+                    <?php if(isset($msg))echo $msg;?>
                     <p class="loginhere">
-                        Don't Have an Account? <a href="signup.php" class="loginhere-link">Sign Up</a>
+                        Don't Have an Account? <a href="index.php" class="loginhere-link">Sign Up</a>
                     </p>
                 </div>
             </div>

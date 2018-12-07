@@ -144,6 +144,9 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
+             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../logout.php">Logout</a>
+            </li>           
           </ul>
         </div>
       </div>
@@ -332,7 +335,7 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="../images/priyanka.png" alt="">
               <h4>Priyanka</h4>
               <p class="text-muted">Software Engineer</p>
               <ul class="list-inline social-buttons">
@@ -356,7 +359,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="../images/shalu1.png" alt="">
               <h4>Shalu Rani</h4>
               <p class="text-muted">Software Engineer</p>
               <ul class="list-inline social-buttons">
@@ -380,7 +383,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="../images/mohdi.png" alt="">
               <h4>Mohdi Habibi</h4>
               <p class="text-muted">Software Engineer</p>
               <ul class="list-inline social-buttons">
@@ -404,7 +407,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="../images/supriya.png" alt="">
               <h4>Supriya</h4>
               <p class="text-muted">Software Engineer</p>
               <ul class="list-inline social-buttons">
@@ -428,7 +431,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="../images/nasrajan.png" alt="">
               <h4>Nasrajan</h4>
               <p class="text-muted">Software Engineer</p>
               <ul class="list-inline social-buttons">
