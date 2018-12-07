@@ -1,4 +1,91 @@
 <?php
+//program for market place
+//Read the json encoded top 5 products from member websites
+//json_decode and process
+// $link = mysqli_connect("localhost:3306", "softwby8", "Meh2Fere@1", "softwby8_newdb");
+
+// if($link === false){
+//   die("ERROR: Could not connect. " . mysqli_connect_error());
+// }
+// // $query = "SELECT * FROM product_rating";
+// // $result = mysqli_query($link, $query);
+
+// $row = mysqli_fetch_row($result);
+
+// foreach ($products as $product) {
+//   $query = "SELECT * FROM product_rating where product_name ='". $product->name. "'";
+//   $result = mysqli_query($link, $query);
+//   if(mysqli_num_rows($result) > 0){
+//     $row = mysqli_fetch_row($result);
+//     $row[1]+= $product->
+
+//     $sql = "INSERT INTO web_site_users ( fullname,  email , username , password) 
+// 	    values('$name', '$email', '$username' , '$password' )";
+
+// 		if (mysqli_query($link, $sql)) 
+// 		{
+// 		    $error_msg=  "New record created successfully";
+//             header("location: ./signin.php");
+// 		} else 
+// 		{
+// 		    $error_msg=  "Error: " . $sql . "<br>" . mysqli_error($conn);
+// 		}
+//   }
+// }  
+
+// $url= "http://localhost/top5.php";
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+// curl_setopt($ch, CURLOPT_URL, $url);
+// $data = curl_exec($ch);
+// curl_close($ch);
+// $data_array = json_decode($data, true);
+// $product = $data_array;
+
+// $url= "http://localhost/top5.php";
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+// curl_setopt($ch, CURLOPT_URL, $url);
+// $data = curl_exec($ch);
+    
+// curl_close($ch);
+// $data_array = json_decode($data, true);
+// $product = array_merge($data_array, $product);
+
+// $url= "http://localhost/top5.php";
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+// curl_setopt($ch, CURLOPT_URL, $url);
+// $data = curl_exec($ch);
+    
+// curl_close($ch);
+// $data_array = json_decode($data, true);
+// $product = array_merge($data_array, $product);
+
+// $url= "http://localhost/top5.php";
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+// curl_setopt($ch, CURLOPT_URL, $url);
+// $data = curl_exec($ch);
+    
+// curl_close($ch);
+// $data_array = json_decode($data, true);
+// $product = array_merge($data_array, $product);
+
+// foreach ($products as $product) {
+//     print $product->product_id;
+//     print " , ";
+//     print $product->product_name;
+//     print " , ";
+//     print $product->product_description;
+//     print " , ";
+//     print $product->rating;
+//     print "<br>";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -377,11 +464,68 @@
           </div>
           <div class="row text-center">
             <div class="col-md-6">
-              <h4 class="service-heading">About you.</h4>
-              <p class="text-muted">None</p>
+              <h4 class="service-heading">Top 5 Highest Rated Product</h4>
+              <p class="text-muted"></p>
+              <?php
+                $url= "http://nasrajan.theeram.net/top5.php";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                curl_setopt($ch, CURLOPT_URL, $url);
+                $data = curl_exec($ch);
+                curl_close($ch);
+                $products = json_decode($data, true);
+                // $product = $data_array;
+                
+                // $url= "http://localhost/top5.php";
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // $data = curl_exec($ch);
+                    
+                // curl_close($ch);
+                // $data_array = json_decode($data, true);
+                // $product = array_merge($data_array, $product);
+                
+                // $url= "http://localhost/top5.php";
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // $data = curl_exec($ch);
+                    
+                // curl_close($ch);
+                // $data_array = json_decode($data, true);
+                // $product = array_merge($data_array, $product);
+                
+                // $url= "http://localhost/top5.php";
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // $data = curl_exec($ch);
+                    
+                // curl_close($ch);
+                // $data_array = json_decode($data, true);
+                // $product = array_merge($data_array, $product);
+                
+                foreach ($products as $product) {
+                    echo $product['product_name'];
+                    echo " : "; 
+                    echo $product['rating'];
+                    // echo " , ";
+                    // echo $product->product_name;
+                    // echo " , ";
+                    // echo $product->product_description;
+                    // echo " , ";
+                    // echo $product->rating;
+                    echo "<br>";
+                }
+              ?>
             </div>
             <div class="col-md-6">
-              <h4 class="service-heading">About other users.</h4>
+              <h4 class="service-heading">Top 5 Most Visited Products</h4>
               <p class="text-muted">None</p>
             </div>
           </div>
