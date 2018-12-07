@@ -230,7 +230,7 @@
               <p class="text-muted">Crossworld Holidays Tours</p>
             </div>
           </a>
-          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://codeweb.online/crunchiestomunchies/login.php?secret=nvDSpUI4R6iga0xfcvO7-V-s">
+          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://codeweb.online/crunchiestomunchies?secret=nvDSpUI4R6iga0xfcvO7-V-s">
             <img class="img-fluid" src="img/portfolio/food.png" alt="">
             <div class="portfolio-caption">
               <h4>Grocery</h4>
@@ -466,7 +466,7 @@
           </div>
           <div class="row text-center">
             <div class="col-md-6">
-              <h4 class="service-heading">Top 5 Highest Rated Product</h4>
+              <h4 class="service-heading">Top 5 Highest Rated Products</h4>
               <p class="text-muted"></p>
               <?php
                 $url= "http://nasrajan.theeram.net/top5.php";
@@ -501,16 +501,16 @@
                 // $data_array = json_decode($data, true);
                 // $products = array_merge($data_array, $products);
 
-                // $url= "PLACE HOLDER FOR SHALU URL";
-                // $ch = curl_init();
-                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                // curl_setopt($ch, CURLOPT_URL, $url);
-                // $data = curl_exec($ch);
+                $url= "http://www.darter.online/top5.php";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                curl_setopt($ch, CURLOPT_URL, $url);
+                $data = curl_exec($ch);
                     
-                // curl_close($ch);
-                // $data_array = json_decode($data, true);
-                // $products = array_merge($data_array, $products);
+                curl_close($ch);
+                $data_array = json_decode($data, true);
+                $products = array_merge($data_array, $products);
                 
                 // sorting the array
                 $visits  = array_column($products, 'rating');
