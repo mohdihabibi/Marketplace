@@ -77,7 +77,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
 
                     <?php if(isset($error_msg))echo $error_msg;?>
                     <p class="loginhere">
-                        Don't Have an Account? <a href="signup.php" class="loginhere-link">Sign Up</a>
+                        Don't Have an Account? <a href="index.php" class="loginhere-link">Sign Up</a>
                     </p>
                 </div>
             </div>
