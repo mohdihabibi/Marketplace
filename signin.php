@@ -24,6 +24,8 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
         $row = mysqli_fetch_row($result);
         $password =$row[4];
         $msg = "$password";
+       $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
         if($_POST["password"] == $password)
           header("location: ./market/index.php");
     }
