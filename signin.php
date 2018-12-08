@@ -43,6 +43,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="google-signin-client_id" content="1043498358170-7g019gc5guq5bli1h0n6s5lf2fbl4id4.apps.googleusercontent.com">
     <title>Sign In Form</title>
 
     <!-- Font Icon -->
@@ -52,7 +53,19 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<script>
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  
+ window.location.href = "market/index.php?lg=gg";
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 
+</script>
+ <script src="https://apis.google.com/js/platform.js" async defer></script>  
     <div class="main">
 
         <section class="signup">
@@ -76,7 +89,7 @@ if (isset($_POST['submit']) && !empty($_POST['username'])
                          <center><fb:login-button scope="public_profile,email" id="login" onlogin="checkLoginState();">
                         </fb:login-button> </center>                         
                     </form>
-
+                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
                     <?php if(isset($error_msg))echo $error_msg;?>
                     <p class="loginhere">
                         Don't Have an Account? <a href="index.php" class="loginhere-link">Sign Up</a>
