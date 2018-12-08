@@ -1,6 +1,4 @@
 <?php
-
-
 //program for market place
 //Read the json encoded top 5 products from member websites
 //json_decode and process
@@ -212,28 +210,28 @@
           </div>
         </div>
         <div class="row">
-          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://www.darter.online?secret=nvDSpUI4R6iga0xfcvO7-V-s">
+          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://www.darter.online/">
             <img class="img-fluid" src="img/portfolio/flight.jpg" alt="">
             <div class="portfolio-caption">
               <h4>Affordable Booking</h4>
               <p class="text-muted">Darter World Travel Company</p>
             </div>
           </a>
-          <a class="col-md-4 col-sm-6 portfolio-item" href="http://nasrajan.theeram.net?secret=nvDSpUI4R6iga0xfcvO7-V-s">
+          <a class="col-md-4 col-sm-6 portfolio-item" href="http://nasrajan.theeram.net">
             <img class="img-fluid" src="img/portfolio/gallery.jpg" alt="">
             <div class="portfolio-caption">
               <h4>Art Gallery</h4>
               <p class="text-muted">Hearty Arts</p>
             </div>
           </a>
-          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://www.cyphernet.online/adventure/index.php?secret=nvDSpUI4R6iga0xfcvO7-V-s">
+          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://www.cyphernet.online/">
             <img class="img-fluid" src="img/portfolio/agency.jpg" alt="">
             <div class="portfolio-caption">
               <h4>Travel Agency</h4>
               <p class="text-muted">Crossworld Holidays Tours</p>
             </div>
           </a>
-          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://codeweb.online/crunchiestomunchies?secret=nvDSpUI4R6iga0xfcvO7-V-s">
+          <a class="col-md-4 col-sm-6 portfolio-item" href = "http://codeweb.online/crunchiestomunchies/login.php">
             <img class="img-fluid" src="img/portfolio/food.png" alt="">
             <div class="portfolio-caption">
               <h4>Grocery</h4>
@@ -464,14 +462,13 @@
           <div class="row">
             <div class="col-lg-12 text-center">
               <h2 class="section-heading text-uppercase">Analytics</h2>
-              <h3 class="section-subheading text-muted">Most visited products and Highest rated products.</h3>
+              <h3 class="section-subheading text-muted">Some usage data about you and other users.</h3>
             </div>
           </div>
           <div class="row text-center">
             <div class="col-md-6">
-              <h4 class="service-heading">Top 5 Highest Rated Products</h4>
+              <h4 class="service-heading">Top 5 Highest Rated Product</h4>
               <p class="text-muted"></p>
-            
               <?php
                 $url= "http://nasrajan.theeram.net/top5.php";
                 $ch = curl_init();
@@ -480,151 +477,59 @@
                 curl_setopt($ch, CURLOPT_URL, $url);
                 $data = curl_exec($ch);
                 curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = $data_array;
+                $products = json_decode($data, true);
+                // $product = $data_array;
                 
-                $url= "http://www.cyphernet.online/adventure/top5.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
+                // $url= "http://localhost/top5.php";
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // $data = curl_exec($ch);
                     
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = array_merge($data_array, $products);
-
-                $url= "http://codeweb.online/crunchiestomunchies/top5.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                    
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = array_merge($data_array, $products);
-
-                $url= "http://www.darter.online/top5.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                    
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = array_merge($data_array, $products);
+                // curl_close($ch);
+                // $data_array = json_decode($data, true);
+                // $product = array_merge($data_array, $product);
                 
-                // sorting the array
-                $visits  = array_column($products, 'rating');
-                $name = array_column($products, 'product_name');
-
-                // Sort the data with volume descending, edition ascending
-                // Add $data as the last parameter, to sort by the common key
-                array_multisort($visits, SORT_DESC, $name, SORT_ASC, $products);
-                $counter = 0;
+                // $url= "http://localhost/top5.php";
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // $data = curl_exec($ch);
+                    
+                // curl_close($ch);
+                // $data_array = json_decode($data, true);
+                // $product = array_merge($data_array, $product);
+                
+                // $url= "http://localhost/top5.php";
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // $data = curl_exec($ch);
+                    
+                // curl_close($ch);
+                // $data_array = json_decode($data, true);
+                // $product = array_merge($data_array, $product);
+                
                 foreach ($products as $product) {
-                  if ($counter == 5){
-                    break;
-                  }
-              ?>
-              
-              <a href="<?php  $redirecturl = urldecode($product['product_url']);
-                            echo $redirecturl;?>" >
-               <img style="width:70%; height:15%;" src="<?php  $imgurl = urldecode($product['product_image']);
-                            echo $imgurl;?>" alt=""/>
-              </a>
-             <br/>
-              <?php
-                  echo $product['product_name'];
-                  echo " : "; 
-                  echo $product['rating'];
-                  echo "<br>";
-                  $counter++;
+                    echo $product['product_name'];
+                    echo " : "; 
+                    echo $product['rating'];
+                    // echo " , ";
+                    // echo $product->product_name;
+                    // echo " , ";
+                    // echo $product->product_description;
+                    // echo " , ";
+                    // echo $product->rating;
+                    echo "<br>";
                 }
               ?>
             </div>
             <div class="col-md-6">
               <h4 class="service-heading">Top 5 Most Visited Products</h4>
-              <p class="text-muted"></p>
-              <p class="text-muted"></p>
-              <?php
-                $url= "http://nasrajan.theeram.net/top5_mostvisited.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = $data_array;
-                
-                $url= "http://www.cyphernet.online/adventure/mostvisited.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                    
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = array_merge($data_array, $products);
-
-                $url= "http://www.darter.online/mostvisited.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                    
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = array_merge($data_array, $products);
-
-                $url= "http://codeweb.online/crunchiestomunchies/top5_mostvisited.php";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                    
-                curl_close($ch);
-                $data_array = json_decode($data, true);
-                $products = array_merge($data_array, $products);
-                
-                // sorting the array
-                $visits  = array_column($products, 'visits');
-                $name = array_column($products, 'product_name');
-
-                // Sort the data with volume descending, edition ascending
-                // Add $data as the last parameter, to sort by the common key
-                array_multisort($visits, SORT_DESC, $name, SORT_ASC, $products);
-                $counter = 0;
-                foreach ($products as $product) {
-                  if ($counter == 5){
-                    break;
-                  }
-             ?>
-              <!-- Code for Product Images and Redirect Url -->
-                <a href="<?php  $redirecturl = urldecode($product['product_url']);
-                            echo $redirecturl;?>" >
-                <img style="width:75%; height:18%;" src="<?php  $imgurl = urldecode($product['product_image']);
-                            echo $imgurl;?>" alt=""/>
-                </a>
-                <br/>
-  
-              <?php
-                  echo $product['product_name'];
-                  echo " : "; 
-                  echo $product['visits'];
-                  echo "<br>";
-                  $counter++;
-               ?>
-               <br/>
-              <?php
-                }
-              ?>
+              <p class="text-muted">None</p>
             </div>
           </div>
         </div>
@@ -639,11 +544,22 @@
             <h3 class="section-subheading text-muted">Write to us. We love your feedback.</h3>
           </div>
         </div>
+          <center>
+          <div class="form-group">
+            <select id= "select" name="test">
+            <option value="darter">Darter World</option>
+            <option value="hearty">Hearty Hearts</option>
+            <option value="crossworld">CrossWorld</option>
+            <option value="crunchies">Crunchies to Munchies</option>
+            </select>
+            <p class="help-block text-danger"></p>
+          </div>    
+           </center>          
         <div class="row">
           <div class="col-lg-12">
             <form id="contactForm" name="sentMessage" novalidate="novalidate">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6">         
                   <div class="form-group">
                     <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
                     <p class="help-block text-danger"></p>
